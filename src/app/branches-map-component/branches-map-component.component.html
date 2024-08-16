@@ -1,0 +1,17 @@
+<google-map [center]="center" [zoom]="zoom" height="500px" width="100%">
+  <map-marker
+    *ngFor="let marker of markers"
+    #mapMarker="mapMarker"
+    [position]="marker.position"
+    [label]="marker.label"
+    [title]="marker.title"
+    [options]="marker.options"
+    (mapClick)="openInfoWindow(marker.branch, mapMarker)"
+  ></map-marker>
+  <map-info-window>
+    <div>
+      <h4>{{ selectedBranch()?.name }}</h4>
+      <p>{{ selectedBranch()?.address }}</p>
+    </div>
+  </map-info-window>
+</google-map>

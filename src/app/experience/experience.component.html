@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devender's Activities</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Experience</h1>
+        <div class="timeline">
+            <div class="timeline-item" *ngFor="let activity of activities">
+                <div class="timeline-date" (click)="toggleDetails(activity)">
+                    {{ activity.duration }}
+                </div>
+                <div class="timeline-content" *ngIf="activity.showDetails">
+                    <h2>{{ activity.title }}</h2>
+                    <h3>{{ activity.location }}</h3>
+                    <p><strong>{{ activity.role }}</strong></p>
+                    <ul>
+                        <li *ngFor="let detail of activity.details">{{ detail }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

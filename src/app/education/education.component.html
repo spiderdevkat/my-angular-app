@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devender's Education</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Education</h1>
+        <div class="timeline">
+            <div class="timeline-item" *ngFor="let entry of educationEntries">
+                <div class="timeline-date" (click)="toggleDetails(entry)">
+                    {{ entry.graduationDate }}
+                </div>
+                <div class="timeline-content" *ngIf="entry.showDetails">
+                    <h2>{{ entry.title }}</h2>
+                    <h3>{{ entry.location }}</h3>
+                    <p><strong>{{ entry.degree }}</strong></p>
+                    <p>{{ entry.major }}</p>
+                    <ul>
+                        <li *ngFor="let detail of entry.details">{{ detail }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+google-map {
+    display: block;
+    height: 500px;
+    width: 100%;
+  }
+  
+  map-info-window {
+    h4 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  
+    p {
+      margin: 0;
+      font-size: 14px;
+    }
+  }
